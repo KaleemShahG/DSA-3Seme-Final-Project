@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hotel Management System</h1>
+        <input type="text" id="name" placeholder="Guest Name">
+        <input type="number" id="age" placeholder="Guest Age">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <input type="number" id="bill" placeholder="Bill Amount">
+        <button onclick="bookRoom()">Book Room</button>
+        <button onclick="displayAvailableRooms()">Show Available Rooms</button>
+        <button onclick="displayBookedRooms()">Show Booked Rooms</button>
+        <button onclick="displayGuests()">Show Guests</button>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function bookRoom() {
+            let name = document.getElementById('name').value;
+            let age = document.getElementById('age').value;
+            let phone = document.getElementById('phone').value;
+            let bill = document.getElementById('bill').value;
+            document.getElementById('output').innerHTML = `Room booked for ${name}, Age: ${age}, Phone: ${phone}, Bill: $${bill}`;
+        }
+
+        function displayAvailableRooms() {
+            document.getElementById('output').innerHTML = 'Available rooms: 1, 2, 3, 4, 5';
+        }
+
+        function displayBookedRooms() {
+            document.getElementById('output').innerHTML = 'Booked rooms: 101, 102';
+        }
+
+        function displayGuests() {
+            document.getElementById('output').innerHTML = 'Guests: Alice (Room 101), Bob (Room 102)';
+        }
+    </script>
+</body>
+</html>
